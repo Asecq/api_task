@@ -8,9 +8,13 @@ var app = express();
 
 
 //Connect With Database
-mongodb.connect('mongodb+srv://dev:6HIhC0jwAlraiLuG@cluster0.lljoq.mongodb.net/?retryWrites=true&w=majority')
+mongodb.connect('mongodb+srv://dev:6HIhC0jwAlraiLuG@cluster0.lljoq.mongodb.net/?retryWrites=true&w=majority'
+
+)
 .then(()=>console.log("Connected Successfuly") , )
-.catch(()=>console.log("Not Connect"));
+.catch(err => {
+    console.log(Error, err.message);
+  })
 
 
 
