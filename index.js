@@ -10,6 +10,7 @@ var app = express();
 //Connect With Database
 connect;
 
+console.log("Database_URL", process.env.DATABASE_URL);
 
 // Use Json
 app.use(express.json());
