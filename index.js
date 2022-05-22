@@ -1,16 +1,18 @@
 //Imports Libraries & Models
-const connect = require("./api/connect")
 const product_router = require("./routes/product_router");
 const express = require("express");
 const helmet = require("helmet");
+const mongodb = require("mongoose");
 var app = express();
 
 
 
 //Connect With Database
-connect;
+mongodb.connect('mongodb+srv://dev:6HIhC0jwAlraiLuG@cluster0.lljoq.mongodb.net/?retryWrites=true&w=majority')
+.then(()=>console.log("Connected Successfuly") , )
+.catch(()=>console.log("Not Connect"));
 
-console.log("Database_URL", process.env.DATABASE_URL);
+
 
 // Use Json
 app.use(express.json());
