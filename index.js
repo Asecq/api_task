@@ -20,7 +20,7 @@ app.use(helmet());
 app.use("/products" , product_router);
 
 //Run & Check Port 3000 
-var PORT = process.env.port || 3000;
+var PORT = process.env.PORT || 3000;
 app.listen(PORT , ()=>{
     console.log("Run in port "+PORT+" ..")
 });
