@@ -5,6 +5,8 @@ const Product = require("../models/product");
 
 //Fetch All Products ~ Method GET
     router.get("/", async(req,res)=>{
+        res.header('Access-Control-Allow-Origin', "*");
+        res.header('Access-Control-Allow-Headers', "*");
     const products = await Product.find();
     res.send(products);
     });
@@ -13,6 +15,8 @@ const Product = require("../models/product");
 // Parameters is rows Json {name,price}   
 // id(dynamic) & date(dynamic)
     router.post("/add" ,async(req,res)=>{
+        res.header('Access-Control-Allow-Origin', "*");
+        res.header('Access-Control-Allow-Headers', "*");
     const product = new Product({
             name:req.body.name,
             price:req.body.price
@@ -27,6 +31,8 @@ const Product = require("../models/product");
 // Filter Product By Id ~ Method GET
 // Parameter id
     router.get("/:id" , async (req,res)=>{
+        res.header('Access-Control-Allow-Origin', "*");
+        res.header('Access-Control-Allow-Headers', "*");
     const finditem = await Product.findById(req.params.id);
     if(!finditem){
         return  res.send("Can Not Found Product !");
